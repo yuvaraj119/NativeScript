@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Dish } from './../shared/dish';
+import { Promotion } from './../shared/promotion';
 
 import { Observable } from 'rxjs/Observable';
 import { Http, Response } from '@angular/http';
@@ -10,25 +10,25 @@ import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class DishService{
+export class PromotionService{
     constructor(public http:Http,
         private processHttpMsgService: ProcessHTTPMsgService){}
 
-    getDishes(): Observable<Dish[]>{
-        return this.http.get(baseURL+'dishes')
+    getPromotions(): Observable<Promotion[]>{
+        return this.http.get(baseURL+'promotions')
             .map(res => { return this.processHttpMsgService.extractData(res);})
             .catch(error => { return this.processHttpMsgService.handleError(error);});
     }
 
-    getDish(id: number): Observable<Dish>{
-        return this.http.get(baseURL+'dishes/'+id)
+    getPromotion(id: number): Observable<Promotion>{
+        return this.http.get(baseURL+'promotions/'+id)
         .map(res => { return this.processHttpMsgService.extractData(res);})
         .catch(error => { return this.processHttpMsgService.handleError(error);});
 
     }
 
-    getFeaturedDish(): Observable<Dish>{
-        return this.http.get(baseURL+'dishes?featured=true')
+    getFeaturedPromotion(): Observable<Promotion>{
+        return this.http.get(baseURL+'promotions?featured=true')
         .map(res => { return this.processHttpMsgService.extractData(res)[0];})
         .catch(error => { return this.processHttpMsgService.handleError(error)[0];});
 
