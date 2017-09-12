@@ -4,8 +4,8 @@
 <StackLayout class="page">
     <ListView [items]="dishes" class="list-group" *ngIf="dishes">
         <ng-template let-dish="item">
-            <StackLayout orientation="horizontal" class="list-group-item">
-                <Image row="0" col="0" rowSpan="2" height="108" width="108" [src]="BaseURL +dish.image" class="thumb p-16"></Image>
+            <StackLayout orientation="horizontal" class="list-group-item" [nsRouterLink]="['/dishdetail', dish.id]">
+                <Image row="0" col="0" rowSpan="2" height="108" width="108" [src]="BaseURL + dish.image" class="thumb p-16"></Image>
                 <GridLayout class="list-group-item" rows="auto *" columns="*">
                     <Label row="0" col="0" class="list-group-item-heading" [text]="dish.name"></Label>
                     <Label row="1" col="0" class="list-group-item-text" [text]="dish.description"></Label>
