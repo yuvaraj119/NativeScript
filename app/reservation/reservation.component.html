@@ -9,13 +9,18 @@
     <ScrollView aria-orientation="vertical" tkMainContent class="page">
         <GridLayout class="m-5" rows="auto auto auto auto" columns="*, *" [formGroup]="reservation">
             <Label class="h3 m-15" row="0" col="0" text="No. of Guests" textWrap="true" ></Label>
-            <TextField class="input input-border" row="0" col="1" formControlName="guests" id="textGuests" hint="Enter No. of Guests" [text]='' (textChange)="onGuestChange($event)"></TextField>
+            <TextField class="input input-border" row="0" col="1" formControlName="guests" 
+                id="textGuests" hint="Enter No. of Guests" [text]='' (textChange)="onGuestChange($event)" 
+                (tap)="createModalView('guest')"></TextField>
             
             <Label class="h3 m-15" row="1" col="0" text="Smoking?" textWrap="true"></Label>
-            <Switch row="1" col="1" checked="false" class="m-15" (checkedChange)="onSmokingChecked($event)" formControlName="smoking"></Switch>
+            <Switch row="1" col="1" checked="false" class="m-15" (checkedChange)="onSmokingChecked($event)" 
+                formControlName="smoking"></Switch>
             
             <Label class="h3 m-15" row="2" col="0" text="Date and Time" textWrap="true"></Label>
-            <TextField class="input input-border" row="2" col="1" formControlName="dateTime" id="textDateTime" hint="Enter Date and Time" [text]='' (textChange)="onDateTimeChange($event)"></TextField>
+            <TextField class="input input-border" row="2" col="1" formControlName="dateTime" id="textDateTime" 
+                hint="Enter Date and Time" [text]='' (textChange)="onDateTimeChange($event)" 
+                (tap)="createModalView('date-time')"></TextField>
             <Button class="btn btn-primary btn-active m-15" row="3" col="0" text="Submit" (tap)="onSubmit()"></Button>
         </GridLayout>
     </ScrollView>
