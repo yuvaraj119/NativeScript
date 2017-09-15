@@ -7,6 +7,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutUsComponent } from './aboutus/aboutus.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: "aboutus", component: AboutUsComponent },
     { path: "menu", component: MenuComponent },
     { path: "contact", component: ContactComponent },
+    { path: "favorites", component: FavoritesComponent },
     { path: "dishdetail/:id", component: DishdetailComponent }
 ];
 

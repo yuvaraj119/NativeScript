@@ -6,6 +6,8 @@ import { FavoriteService } from './../services/favorite.service';
 import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 import { ActivatedRoute, Params} from '@angular/router';
 import { RouterExtensions } from 'nativescript-angular/router';
+import { Toasty } from 'nativescript-toasty';
+import { confirm } from 'ui/dialogs';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -51,7 +53,25 @@ export class DishdetailComponent implements OnInit{
 
     addToFavorites(){
         if(!this.favorite){
-            this.favorite = this.favoriteService.addFavorite(this.dish.id);
+            let  options = {
+                title: "Confirm Delete",
+                message: 'Do you want to add Dish '+this.dish.id,
+                okButtonText: 'Yes',
+                cancelButtonText: 'No',
+                neutralbuttonText: 'Cancel'
+            };
+    
+            confirm(options)
+                .then((result: boolean) => {
+                    if(result){
+                        this.favorite=null;
+                        this.favorite = this.favoriteService.addFavorite(this.dish.id);
+                        const toast = new Toasty('Added dish '+ this.dish.id,'short','bottom');
+                        toast.show();
+                    }else{
+                        console.log('Delete cancelled');
+                    }
+                });
         }
     }
 
