@@ -20,6 +20,7 @@
     "@angular/router": "~4.2.0",
     "font-awesome": "^4.7.0",
     "nativescript-angular": "~4.2.0",
+    "nativescript-couchbase": "^1.0.18",
     "nativescript-ngx-fonticon": "^2.2.3",
     "nativescript-telerik-ui": "^3.1.0",
     "nativescript-theme-core": "~1.0.2",
