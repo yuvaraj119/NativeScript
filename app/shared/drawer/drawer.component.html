@@ -11,22 +11,27 @@
     </GridLayout>
     <GridLayout class="sidedrawer-list-item" rows="*" columns="50, *" 
         orientation="horizontal" [nsRouterLink]="['/aboutus']" clearHistory="true">
-        <Label row="1" col="0" class="sidedrawer-list-item-text fa" text="&#xf05a;"></Label> 
+        <Label row="0" col="0" class="sidedrawer-list-item-text fa" text="&#xf05a;"></Label> 
         <Label row="0" col="1" class="sidedrawer-list-item-text" text="About Us"></Label>
     </GridLayout>
     <GridLayout class="sidedrawer-list-item" rows="*" columns="50, *" 
         orientation="horizontal" [nsRouterLink]="['/menu']" clearHistory="true">
-        <Label row="2" col="0" class="sidedrawer-list-item-text fa" text="&#xf03a;"></Label> 
+        <Label row="0" col="0" class="sidedrawer-list-item-text fa" text="&#xf03a;"></Label> 
         <Label row="0" col="1" class="sidedrawer-list-item-text" text="Menu"></Label>
     </GridLayout>
     <GridLayout class="sidedrawer-list-item" rows="*" columns="50, *" 
         orientation="horizontal" [nsRouterLink]="['/contact']" clearHistory="true">
-        <Label row="3" col="0" class="sidedrawer-list-item-text fa" [text]="'fa-address-card' | fonticon"></Label> 
+        <Label row="0" col="0" class="sidedrawer-list-item-text fa" [text]="'fa-address-card' | fonticon"></Label> 
         <Label row="0" col="1" class="sidedrawer-list-item-text" text="Contact"></Label>
     </GridLayout>
     <GridLayout class="sidedrawer-list-item" rows="*" columns="50, *" 
-    orientation="horizontal" [nsRouterLink]="['/favorites']" clearHistory="true">
-    <Label row="4" col="0" class="sidedrawer-list-item-text fa" [text]="'fa-heart' | fonticon"></Label> 
-    <Label row="0" col="1" class="sidedrawer-list-item-text" text="My Favorites"></Label>
+        orientation="horizontal" [nsRouterLink]="['/favorites']" clearHistory="true">
+        <Label row="0" col="0" class="sidedrawer-list-item-text fa" [text]="'fa-heart' | fonticon"></Label> 
+        <Label row="0" col="1" class="sidedrawer-list-item-text" text="My Favorites"></Label>
+    </GridLayout>
+    <GridLayout class="sidedrawer-list-item" rows="*" columns="50, *" 
+        orientation="horizontal" [nsRouterLink]="['/reservation']" clearHistory="true">
+        <Label row="0" col="0" class="sidedrawer-list-item-text fa" [text]="'fa-cutlery' | fonticon"></Label> 
+        <Label row="0" col="1" class="sidedrawer-list-item-text" text="Reserve Table"></Label>
 </GridLayout>
 </StackLayout>
